@@ -1,0 +1,38 @@
+{
+  "name": "theta-programming-language",
+  "displayName": "Theta Programming Language",
+  "description": "Syntax highlighting for the Theta programming language (.th files)",
+  "version": "2026.8.0",
+  "publisher": "theta-lang",
+  "homepage": "https://theta-lang.com",
+  "repository": "https://github.com/Theta-language/theta-programming-language-vscode-extension",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "theta",
+    "real-time",
+    "data analysis"
+  ],
+  "icon": "icon.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "theta",
+        "aliases": ["Theta", "theta"],
+        "extensions": [".th"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "theta",
+        "scopeName": "source.theta",
+        "path": "./syntaxes/theta.tmLanguage.json"
+      }
+    ]
+  }
+}
