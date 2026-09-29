@@ -1,11 +1,11 @@
 {
-  "name": "theta-programming-language",
-  "displayName": "Theta Programming Language",
-  "description": "Syntax highlighting for the Theta programming language (.th files)",
-  "version": "2026.8.0",
-  "publisher": "theta-lang",
-  "homepage": "https://theta-lang.com",
-  "repository": "https://github.com/Theta-language/theta-programming-language-vscode-extension",
+  "name": "l-language-vscode-extension",
+  "displayName": "L Language",
+  "description": "Syntax highlighting for the L Language (.ll files)",
+  "version": "2026.9.0",
+  "publisher": "L-Language",
+  "homepage": "https://l-lang.com",
+  "repository": "https://github.com/L-Language-CCCXVI/l-language-vscode-extension",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -13,25 +13,28 @@
     "Programming Languages"
   ],
   "keywords": [
-    "theta",
+    "L Language",
     "real-time",
-    "data analysis"
+    "data analysis",
+    "lean",
+    "high-performant",
+    "lucid"
   ],
   "icon": "icon.png",
   "contributes": {
     "languages": [
       {
-        "id": "theta",
-        "aliases": ["Theta", "theta"],
-        "extensions": [".th"],
+        "id": "L",
+        "aliases": ["L"],
+        "extensions": [".ll"],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "theta",
-        "scopeName": "source.theta",
-        "path": "./syntaxes/theta.tmLanguage.json"
+        "language": "L",
+        "scopeName": "source.L",
+        "path": "./syntaxes/l.tmLanguage.json"
       }
     ]
   }

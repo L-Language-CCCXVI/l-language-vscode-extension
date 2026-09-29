@@ -1,8 +1,8 @@
-# Theta Programming Language — Visual Studio Code Extension
+# L Language Visual Studio Code Extension
 
-Syntax highlighting for the **Theta** programming language (`.th` files).
+Syntax highlighting for the **L Language** (`.ll` files).
 
-Theta is a programming language for real-time data analysis, featuring columnar and graph databases as first-class types.
+L-Language is a programming language for real-time data analysis, featuring columnar and graph databases as first-class types.
 
 ## Features
 
@@ -28,20 +28,20 @@ This extension provides syntax highlighting for:
   - String: `"hello"`
   - U-string: `U"日本語"`
 - **Operators** — `+`, `-`, `*`, `%`, `=`, `==`, `!=`, `!==`, `<`, `<=`, `>`, `>=`, `#`, `,`, `&&`, `||`, `&?`, `in`, `within`, etc. expansion adapters `/`, `\`, `|`
-- **Assignment** — `<-` (define), `<<=` (overwrite), `<~` (cast/attribute)
+- **Assignment** — `<-` (define), `<<=` (overwrite), `<~` (cast)
 - **Enumerations** — `enum signal <- \`green\`yellow\`red` and access `signal::\`green`
 - **Column references** — `$name`, `$age` in query expressions
 - **List attributes** — `u~`, `a~`, `d~`, `p~`
-- **Built-in functions** — `select`, `update`, `delete`, `insert`, `table`, `graph`, `map`, `count`, `range`, `save`, `load`, `import`, `sleep`, `await`, and more
+- **Built-in functions** — `select`, `update`, `delete`, `insert`, `table`, `graph`, `map`, `count`, `range`, `save_table`, `load_csv`, `import`, `sleep`, `await`, and more
 - **Function calls** — any `identifier[...]` call
 
 ## Usage
 
-Files with the `.th` extension are automatically recognized as Theta source files.
+Files with the `.ll` extension are automatically recognized as Theta source files.
 
 ## Example
 
-```theta
+```L
 // Define enum
 @)enum sex <- `M`F
 
@@ -60,5 +60,5 @@ Files with the `.th` extension are automatically recognized as Theta source file
 
 ## Links
 
-- [Theta Programming Language Website](https://theta-lang.com)
-- [Tutorial](https://theta-lang.com/tutorials/)
+- [L Language Website](https://l-lang.com)
+- [Tutorial](https://l-lang.com/tutorials/)

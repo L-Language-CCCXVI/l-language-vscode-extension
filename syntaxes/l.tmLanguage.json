@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "Theta",
-  "scopeName": "source.theta",
-  "fileTypes": ["th"],
+  "name": "L Language",
+  "scopeName": "source.L",
+  "fileTypes": ["ll"],
   "patterns": [
     { "include": "#comments" },
     { "include": "#strings" },
@@ -30,47 +30,47 @@
     "comments": {
       "patterns": [
         {
-          "name": "comment.block.theta",
+          "name": "comment.block.L",
           "begin": "/\\*",
           "end": "\\*/",
           "captures": {
-            "0": { "name": "punctuation.definition.comment.theta" }
+            "0": { "name": "punctuation.definition.comment.L" }
           }
         },
         {
-          "name": "comment.line.double-slash.theta",
+          "name": "comment.line.double-slash.L",
           "match": "//.*$"
         }
       ]
     },
     "strings": {
-      "name": "string.quoted.double.theta",
+      "name": "string.quoted.double.L",
       "begin": "(?<!U)\"",
       "end": "\"",
       "patterns": [
         {
-          "name": "constant.character.escape.theta",
+          "name": "constant.character.escape.L",
           "match": "\\\\."
         }
       ]
     },
     "u-strings": {
-      "name": "string.quoted.double.unicode.theta",
+      "name": "string.quoted.double.unicode.L",
       "begin": "U\"",
       "end": "\"",
       "patterns": [
         {
-          "name": "constant.character.escape.theta",
+          "name": "constant.character.escape.L",
           "match": "\\\\."
         }
       ]
     },
     "characters": {
-      "name": "string.quoted.single.theta",
+      "name": "string.quoted.single.L",
       "match": "(?<!U)'(?:[^'\\\\]|\\\\.)'"
     },
     "u-characters": {
-      "name": "string.quoted.single.unicode.theta",
+      "name": "string.quoted.single.unicode.L",
       "match": "U'(?:[^'\\\\]|\\\\.)*'"
     },
     "function-definition": {
@@ -78,16 +78,16 @@
       "begin": "\\b(async\\s+)?(fn)\\s*\\(",
       "end": "\\)",
       "beginCaptures": {
-        "1": { "name": "keyword.other.theta" },
-        "2": { "name": "keyword.other.theta" }
+        "1": { "name": "keyword.other.L" },
+        "2": { "name": "keyword.other.L" }
       },
       "patterns": [
         {
-          "name": "variable.parameter.theta",
+          "name": "variable.parameter.L",
           "match": "[a-zA-Z_][a-zA-Z0-9_]*"
         },
         {
-          "name": "punctuation.separator.parameter.theta",
+          "name": "punctuation.separator.parameter.L",
           "match": ","
         }
       ]
@@ -95,86 +95,86 @@
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.control.theta",
+          "name": "keyword.control.L",
           "match": "\\b(if|elif|else|return|in|within|while)\\b"
         },
         {
-          "name": "keyword.other.theta",
+          "name": "keyword.other.L",
           "match": "\\b(fn|async|extern|enum)\\b"
         }
       ]
     },
     "builtins": {
-      "name": "support.function.builtin.theta",
-      "match": "\\b(ascend|average|average_unchecked|await|count|connect|descend|deserialize|graph|iascend|idesend|import|key|max|min|negate|random|random_secure|record|serialize|sleep|standard_deviation|standard_deviation_unchecked|sum|sum_unchecked|type|value|insert|insert!|map|range|table|insert_graph_node|insert_graph_edge|save|load|replay|delete|delete!|search|select|update|update!)(?=\\[)"
+      "name": "support.function.builtin.L",
+      "match": "\\b(now|ascend|average|average_unchecked|await|count|descend|deserialize|graph|iascend|idesend|import|key|max|min|negate|print|random|random_secure|refcount|serialize|sleep|standard_deviation|standard_deviation_unchecked|sum|sum_unchecked|type|value|add_http_route|connect|correlation|correlation_unchecked|http_connect|insert|insert!|map|moving_average|moving_average_unchecked|range|record|record_http_requests|table|weighted_average|insert_graph_edge|insert_graph_node|load_csv|save_graph|save_table|load_graph|load_historical_tables|replay|delete|delete!|search|select|update|update!)(?=\\[)"
     },
     "constants": {
       "patterns": [
         {
-          "name": "constant.language.theta",
-          "match": "\\b(inf|__NaN__)\\b"
+          "name": "constant.language.L",
+          "match": "\\b(inf|__NaN__|__l_symbols__|__http_method__|__http_content_type__)\\b"
         },
         {
-          "name": "constant.language.none.theta",
+          "name": "constant.language.none.L",
           "match": "::"
         },
         {
-          "name": "constant.language.bool.theta",
+          "name": "constant.language.bool.L",
           "match": "\\b[01]+b\\b"
         }
       ]
     },
     "enum-definition": {
-      "name": "meta.enum.definition.theta",
+      "name": "meta.enum.definition.L",
       "match": "enum\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*<-",
       "captures": {
-        "1": { "name": "entity.name.type.enum.theta" }
+        "1": { "name": "entity.name.type.enum.L" }
       }
     },
     "enum-access": {
-      "name": "meta.enum.access.theta",
+      "name": "meta.enum.access.L",
       "match": "([a-zA-Z_][a-zA-Z0-9_]*)::(`[a-zA-Z_][a-zA-Z0-9_]*)",
       "captures": {
-        "1": { "name": "entity.name.type.enum.theta" },
-        "2": { "name": "variable.other.enummember.theta" }
+        "1": { "name": "entity.name.type.enum.L" },
+        "2": { "name": "variable.other.enummember.L" }
       }
     },
     "symbols": {
-      "name": "constant.other.symbol.theta",
-      "match": "`[a-zA-Z_][a-zA-Z0-9_]*"
+      "name": "constant.other.symbol.L",
+      "match": "`[/a-zA-Z_][/a-zA-Z0-9_-]*"
     },
     "column-symbols": {
-      "name": "constant.other.column-symbol.theta",
-      "match": "$[a-zA-Z_][a-zA-Z0-9_]*"
+      "name": "constant.other.column-symbol.L",
+      "match": "$[/a-zA-Z_][/a-zA-Z0-9_-]*"
     },
     "timestamps": {
-      "name": "constant.other.timestamp.theta",
-      "match": "\\d{4}\\.\\d{2}\\.\\d{2}_\\d{2}:\\d{2}:\\d{2}\\.\\d+"
+      "name": "constant.other.timestamp.L",
+      "match": "\\d{4}\\.\\d{2}\\.\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d+"
     },
     "dates": {
-      "name": "constant.other.date.theta",
+      "name": "constant.other.date.L",
       "match": "\\d{4}\\.\\d{2}\\.\\d{2}(?!_)"
     },
     "numbers": {
       "patterns": [
         {
-          "name": "constant.numeric.hex.theta",
+          "name": "constant.numeric.hex.L",
           "match": "0x[0-9a-fA-F]+"
         },
         {
-          "name": "constant.numeric.integer.theta",
+          "name": "constant.numeric.integer.L",
           "match": "-?\\d+i\\b"
         },
         {
-          "name": "constant.numeric.long.theta",
+          "name": "constant.numeric.long.L",
           "match": "-?\\d+l\\b"
         },
         {
-          "name": "constant.numeric.float.theta",
+          "name": "constant.numeric.float.L",
           "match": "-?\\d+\\.\\d+"
         },
         {
-          "name": "constant.numeric.long.plain.theta",
+          "name": "constant.numeric.long.plain.L",
           "match": "(?<![`'\".a-zA-Z_])-?\\d+(?![ibx.a-zA-Z_])"
         }
       ]
@@ -182,51 +182,51 @@
     "operators": {
       "patterns": [
         {
-          "name": "keyword.operator.assignment.theta",
+          "name": "keyword.operator.assignment.L",
           "match": "<<=|<-|<~"
         },
         {
-          "name": "keyword.operator.comparison.theta",
+          "name": "keyword.operator.comparison.L",
           "match": "===|!==|==|!=|<=|>=|<|>"
         },
         {
-          "name": "keyword.operator.logical.theta",
+          "name": "keyword.operator.logical.L",
           "match": "&&|\\|\\||&\\?"
         },
         {
-          "name": "keyword.operator.arithmetic.theta",
+          "name": "keyword.operator.arithmetic.L",
           "match": "[+\\-*%#,]"
         },
         {
-          "name": "keyword.operator.expansion.theta",
+          "name": "keyword.operator.expansion.L",
           "match": "[+\\-*%#,=<>!&|]{1,3}[/\\\\|]"
         },
         {
-          "name": "keyword.operator.not.theta",
+          "name": "keyword.operator.not.L",
           "match": "(?<![=!])!(?!=)"
         }
       ]
     },
     "attributes": {
-      "name": "storage.modifier.attribute.theta",
+      "name": "storage.modifier.attribute.L",
       "match": "\\b([uadp])~"
     },
     "column-ref": {
-      "name": "variable.other.column.theta",
-      "match": "\\$[a-zA-Z_][a-zA-Z0-9_]*"
+      "name": "variable.other.column.L",
+      "match": "\\$[/a-zA-Z_][/a-zA-Z0-9_-]*"
     },
     "assignment": {
-      "name": "meta.assignment.theta",
+      "name": "meta.assignment.L",
       "match": "([a-zA-Z_][a-zA-Z0-9_]*)\\s*<-",
       "captures": {
-        "1": { "name": "variable.other.theta" }
+        "1": { "name": "variable.other.L" }
       }
     },
     "function-call": {
-      "name": "meta.function-call.theta",
+      "name": "meta.function-call.L",
       "match": "\\b([a-zA-Z_][a-zA-Z0-9_!]*)(?=\\[)",
       "captures": {
-        "1": { "name": "entity.name.function.theta" }
+        "1": { "name": "entity.name.function.L" }
       }
     }
   }
