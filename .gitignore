@@ -1,1 +1,4 @@
-*.vsix
+target/*.vsix
+target/extension*
+node_modules/
+package-lock.json

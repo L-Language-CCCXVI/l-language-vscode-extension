@@ -1,0 +1,13 @@
+{
+  "iconDefinitions": {
+    "_l_file": {
+      "iconPath": "../images/l-language-icon.png"
+    }
+  },
+  "fileExtensions": {
+    "ll": "_l_file"
+  },
+  "languageIds": {
+    "l": "_l_file"
+  }
+}

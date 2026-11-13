@@ -41,7 +41,7 @@ Files with the `.ll` extension are automatically recognized as Theta source file
 
 ## Example
 
-```L
+```l
 // Define enum
 @)enum sex <- `M`F
 
@@ -56,6 +56,19 @@ Files with the `.ll` extension are automatically recognized as Theta source file
   sleep[x];
   return 42;
 };
+```
+
+## Configuration
+
+- `l-language-vscode-extension.serverPath`: Path to the `L` binary. If empty, it falls back to `L` on the `PATH`.
+
+## Packaging
+
+```bash
+$ npm install -g @vscode/vsce typescript
+$ npm install vscode-languageclient
+$ npm install --save-dev @types/node @types/vscode dotenv esbuild
+$ ./scripts/packaging.sh
 ```
 
 ## Links
