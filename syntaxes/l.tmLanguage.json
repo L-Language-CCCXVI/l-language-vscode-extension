@@ -20,6 +20,7 @@
     { "include": "#timestamps" },
     { "include": "#dates" },
     { "include": "#numbers" },
+    { "include": "#includes" },
     { "include": "#operators" },
     { "include": "#attributes" },
     { "include": "#column-ref" },
@@ -100,7 +101,7 @@
         },
         {
           "name": "keyword.other.l",
-          "match": "\\b(fn|async|extern|enum)\\b"
+          "match": "\\b(async|enum|extern|fn)\\b"
         }
       ]
     },
@@ -178,6 +179,13 @@
           "match": "(?<![`'\".a-zA-Z_])-?\\d+(?![ibx.a-zA-Z_])"
         }
       ]
+    },
+    "includes": {
+      "name": "keyword.include.l",
+      "match": "#include(<[a-zA-Z0-9_/\\.]+>)",
+      "captures": {
+        "1": { "name": "string.path.l" }
+      }
     },
     "operators": {
       "patterns": [
