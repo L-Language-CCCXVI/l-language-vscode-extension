@@ -53,6 +53,11 @@
           "enum": ["off", "messages", "verbose"],
           "default": "off",
           "description": "Trace the communication between L Language Client and Server."
+        },
+        "l-language-vscode-extension.includeDirectory": {
+          "type": "string",
+          "default": "",
+          "description": "Root directory for including L files. Workspace directory is used if it is empty. The value must end with '/'"
         }
       }
     },

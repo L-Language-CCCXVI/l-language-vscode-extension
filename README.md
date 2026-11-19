@@ -9,7 +9,7 @@ L-Language is a programming language for real-time data analysis, featuring colu
 This extension provides syntax highlighting for:
 
 - **Comments** — `//` line comments and `/* */` block comments
-- **Keywords** — `if`, `elif`, `else`, `return`, `while`, `fn`, `async`, `in`, `within`
+- **Keywords** — `if`, `elif`, `else`, `return`, `while`, `fn`, `async`, `in`, `within`, `include`
 - **Types** — `bool`, `byte`, `integer`, `long`, `double`, `character`, `u-character` `symbol`, `enumeration`, `date`, `timestamp`, `string`, etc.
 - **Literals**
   - Boolean: `1b`, `0b`
@@ -42,6 +42,9 @@ Files with the `.ll` extension are automatically recognized as Theta source file
 ## Example
 
 ```l
+// Include module
+@)#include<modules/library.ll>
+
 // Define enum
 @)enum sex <- `M`F
 
@@ -61,6 +64,8 @@ Files with the `.ll` extension are automatically recognized as Theta source file
 ## Configuration
 
 - `l-language-vscode-extension.serverPath`: Path to the `L` binary. If empty, it falls back to `L` on the `PATH`.
+- `l-language-vscode-extension.trace.server`: Trace level of LSP server.
+- 
 
 ## Packaging
 

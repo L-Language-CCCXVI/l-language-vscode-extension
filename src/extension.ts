@@ -47,6 +47,19 @@ function resolveServerPath(context: ExtensionContext): string | undefined {
     return l_home + "/L";
 }
 
+function resolveIncludeDirectory(): string | undefined {
+    const config = workspace.getConfiguration("l-language-vscode-extension");
+    const userPath = config.get<string>("includeDirectory", "").trim();
+    if (userPath) {
+        return userPath;
+    }
+    const folders = workspace.workspaceFolders;
+    if (folders && folders.length > 0) {
+        return folders[0].uri.fsPath;
+    }
+    return undefined;
+}
+
 function getTraceLevel(): Trace {
     const value = workspace
         .getConfiguration("l-language-vscode-extension")
@@ -119,10 +132,16 @@ async function startLanguageServer(context: ExtensionContext): Promise<void> {
         });
     });
 
+    const includeDir = resolveIncludeDirectory();
+
+    // Send changed configuration values to server.
     const clientOptions: LanguageClientOptions = {
         documentSelector: [{ scheme: "file", language: "l" }],
         synchronize: {
             configurationSection: "l-language-vscode-extension",
+        },
+        initializationOptions: {
+            includeDirectory: includeDir ?? "",
         },
         traceOutputChannel: TRACE_OUTPUT,
     };
